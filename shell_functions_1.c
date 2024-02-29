@@ -54,11 +54,8 @@ void _execve(char *path, char **av, char **env)
 }
 
 /**
- * _getline - a function that executes the getline function.
- * @line: buffer to be read into.
- * @n: points to the size of the buffer
- * @stream: FILE stream to be read from
- * Return: Aways 0.
+ * _getline - a function that executes the getline()
+ * Return: Aways read line on success.
  */
 char *_getline(void)
 {
@@ -75,13 +72,13 @@ char *_getline(void)
 	if (readline == EOF)
 	{
 		free(line);
-		return NULL;
+		return (NULL);
 	}
 	/**
 	 * if (readline > 0 && (*line)[readline - 1] == 10)
 		(*line)[readline - 1] = '\0';
 	*/
-	if (readline > 0 && line[readline - 1] == '\n')
+	if (readline > 0l && line[readline - 1] == '\n')
 		line[readline - 1] = '\0';
 
 	return (line);
