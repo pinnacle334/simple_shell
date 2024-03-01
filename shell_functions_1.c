@@ -45,9 +45,10 @@ int _wait(void)
  * @env: enviromental variables.
  * Return: Aways 0.
  */
-void _execve(char *path, char **av, char **env)
+void _execve(char *path, char **av, char **envp)
 {
-	if (execve(path, av, env) == -1)
+
+	if (execve(path, av, envp) == -1)
 	{
 		handle_error("execve");
 	}
@@ -67,9 +68,9 @@ char *_getline(void)
 	if (readline == -1)
 	{
 		free(line);
-		handle_error("getline");
+		return NULL;
 	}
-	if (readline == EOF)
+	if (readline == 0)
 	{
 		free(line);
 		return (NULL);

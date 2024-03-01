@@ -21,7 +21,7 @@ void handle_error(const char *message);
 int _fork(void);
 int _wait(void);
 char *_getline(void);
-void _execve(char *path, char **av, char **env);
+void _execve(char *path, char **av, char **envp);
 /*size_t _getline(char **line, size_t *n, FILE *stream);*/
 size_t _strtok(char *str, const char *delimiters);
 char **_strArray(char *str, const char *delim);

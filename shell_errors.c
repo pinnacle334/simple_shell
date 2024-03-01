@@ -8,7 +8,6 @@
 void handle_error(const char *message)
 {
 	perror(message);
-	exit(EXIT_FAILURE);
 
 	if (errno == EACCES)
 		printf("Permission denied\n");
@@ -24,4 +23,6 @@ void handle_error(const char *message)
 		printf("Resource temporarily unavailable\n");
 	else
 		printf("There was an error\n");
+
+	exit(EXIT_FAILURE);
 }

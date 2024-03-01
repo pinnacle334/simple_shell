@@ -12,8 +12,6 @@ int main(int argc, char **argv, char **env)
 {
 	char *line;
 
-	env = NULL;
-
 	printf("$ ");
 
 	while ((line = _getline()) != NULL)
